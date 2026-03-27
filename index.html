@@ -18,27 +18,12 @@ input,select{width:100%;font-size:13px}
 .add-btn{background:#1a3a5c;color:#fff;border:none;border-radius:var(--border-radius-md);padding:10px;font-size:14px;cursor:pointer;width:100%;margin-top:10px}
 .add-btn:hover{background:#224d78}
 .add-btn-sec{background:#2d6a4f;color:#fff;border:none;border-radius:var(--border-radius-md);padding:9px 16px;font-size:13px;cursor:pointer;margin-top:8px}
-.add-btn-sec:hover{background:#1b4332}
 .tbl{width:100%;border-collapse:collapse;font-size:12px}
 .tbl th{text-align:left;padding:7px 8px;background:var(--color-background-secondary);color:var(--color-text-secondary);font-weight:500;font-size:11px}
 .tbl td{padding:7px 8px;border-bottom:.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:middle}
 .del{background:none;border:none;color:#e24b4a;cursor:pointer;font-size:15px}
-.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
-.pcard{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px;text-align:center}
-.pcard .monto{font-size:18px;font-weight:500;color:#1a3a5c}
-.pcard .etiq{font-size:11px;color:var(--color-text-secondary);margin-top:2px}
-.pcard.saldo .monto{color:#a32d2d}
-.pcard.iva .monto{color:#7a5a1a}
-.pcard.sug-int{border:1.5px dashed #1a3a5c;background:var(--color-background-secondary)}
-.pcard.sug-int .monto{color:#1a7a3c}
-.brow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.bcot{background:#1a3a5c;color:#fff;border:none;border-radius:var(--border-radius-md);padding:13px;font-size:14px;cursor:pointer}
-.bcot:hover{background:#224d78}
-.bot{background:#fff;color:#1a3a5c;border:1.5px solid #1a3a5c;border-radius:var(--border-radius-md);padding:13px;font-size:14px;cursor:pointer;font-weight:500}
-.bot:hover{background:#f0f4f8}
-.blim{background:none;border:.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:10px;font-size:13px;cursor:pointer;color:var(--color-text-secondary);width:100%;margin-top:8px}
 .empty{text-align:center;color:var(--color-text-tertiary);padding:2rem;font-size:13px}
-.nota{font-size:11px;color:var(--color-text-secondary);margin-top:6px;padding:6px 10px;background:var(--color-background-secondary);border-radius:6px;border-left:3px solid #1a3a5c}
+.nota-field{font-size:11px;color:var(--color-text-secondary);margin-top:6px;padding:6px 10px;background:var(--color-background-secondary);border-radius:6px;border-left:3px solid #1a3a5c}
 .img-ua{border:1.5px dashed var(--color-border-secondary);border-radius:var(--border-radius-md);padding:14px;text-align:center;cursor:pointer;margin-top:8px;font-size:13px;color:var(--color-text-secondary)}
 .img-ua:hover{background:var(--color-background-secondary)}
 .img-prevs{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
@@ -46,13 +31,38 @@ input,select{width:100%;font-size:13px}
 .img-prev img{width:90px;height:70px;object-fit:cover;border-radius:6px;border:.5px solid var(--color-border-tertiary)}
 .img-prev .rmi{position:absolute;top:-5px;right:-5px;background:#e24b4a;color:#fff;border:none;border-radius:50%;width:18px;height:18px;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .hint3{font-size:11px;color:var(--color-text-secondary);margin-top:3px}
-.costo-row{display:flex;gap:8px;align-items:flex-end;margin-bottom:8px;flex-wrap:wrap}
-.costo-row input{font-size:13px}
-.costo-list{margin-top:8px}
+.costo-row{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}
 .costo-item{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;background:var(--color-background-secondary);border-radius:6px;margin-bottom:4px;font-size:13px}
-.costo-item .ci-desc{color:var(--color-text-primary)}
-.costo-item .ci-monto{color:#2d6a4f;font-weight:500;margin-left:12px;white-space:nowrap}
-.sug-interno{font-size:12px;color:#1a7a3c;background:#e8f5e9;padding:4px 10px;border-radius:6px;margin-top:6px;display:inline-block}
+.blim{background:none;border:.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);padding:10px;font-size:13px;cursor:pointer;color:var(--color-text-secondary);width:100%;margin-top:8px}
+.brow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.bcot{background:#1a3a5c;color:#fff;border:none;border-radius:var(--border-radius-md);padding:13px;font-size:14px;cursor:pointer}
+.bcot:hover{background:#224d78}
+.bot{background:#fff;color:#1a3a5c;border:1.5px solid #1a3a5c;border-radius:var(--border-radius-md);padding:13px;font-size:14px;cursor:pointer;font-weight:500}
+.bot:hover{background:#f0f4f8}
+
+/* === RESUMEN TOTALES === */
+.resumen-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px}
+.resumen-izq{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1rem}
+.resumen-der{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1rem}
+.res-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;font-size:13px;border-bottom:.5px solid var(--color-border-tertiary)}
+.res-row:last-child{border-bottom:none}
+.res-label{color:var(--color-text-secondary)}
+.res-val{font-weight:500;color:var(--color-text-primary)}
+.res-desc{color:#c0392b;font-weight:500}
+.res-iva{color:#b7770d;font-weight:500}
+.res-total-row{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#1a3a5c;border-radius:8px;margin-top:10px}
+.res-total-label{color:#fff;font-size:14px;font-weight:500}
+.res-total-val{color:#fff;font-size:22px;font-weight:500}
+.der-label{font-size:12px;color:var(--color-text-secondary);margin-bottom:4px}
+.der-val{font-size:28px;font-weight:500;color:#1a3a5c;margin-bottom:12px}
+.anticipo-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:13px;border-top:.5px solid var(--color-border-tertiary);margin-top:4px}
+.saldo-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:13px}
+.saldo-val{color:#c0392b;font-weight:500;font-size:16px}
+.warn-badge{font-size:11px;background:#fff3cd;color:#856404;padding:3px 8px;border-radius:20px;margin-top:4px;display:none}
+.sug-note{font-size:11px;color:#2d6a4f;background:#e8f5e9;padding:4px 10px;border-radius:6px;margin-top:6px;display:none}
+.anticipo-input-row{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+.pct-badge{font-size:13px;color:#1a3a5c;font-weight:500;white-space:nowrap}
+.desc-sec{background:#fff5f5;border:.5px solid #f5c6cb;border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:1rem}
 </style>
 
 <div class="app">
@@ -61,8 +71,8 @@ input,select{width:100%;font-size:13px}
     <img src="logo.jpg" alt="INSTALUVI">
   </div>
   <div>
-    <div style="font-size:17px;font-weight:500">Sistema de Cotizaciones y Órdenes</div>
-    <div style="font-size:12px;opacity:.75">Cotización con IVA | Orden de Trabajo  (el programa esta en desarrollo aun puede cometer errores)</div>
+    <div style="font-size:17px;font-weight:500">Sistema INSTALUVI — Precios 2026</div>
+    <div style="font-size:12px;opacity:.75">Cotización | Orden de Trabajo | Totales sincronizados</div>
   </div>
 </div>
 
@@ -74,14 +84,10 @@ input,select{width:100%;font-size:13px}
     <div><label>Teléfono</label><input id="telefono" type="text" placeholder="Ej: 7777-1234"></div>
     <div><label>Dirección</label><input id="direccion" type="text" placeholder="Ej: Col. Santa Inés, San Miguel"></div>
     <div><label>Vendedor</label><input id="vendedor" type="text" placeholder="Ej: Melvin Rivera"></div>
-    <div>
-      <label>Sucursal</label>
-      <select id="sucursal">
-        <option>Ahuachapán</option><option>San Juan Opico</option><option>San Miguel</option>
-        <option>San Salvador</option><option>El Congo</option><option>Sonsonate</option>
-      </select>
+    <div><label>Sucursal</label>
+      <select id="sucursal"><option>Ahuachapán</option><option>San Juan Opico</option><option>San Miguel</option><option>San Salvador</option><option>El Congo</option><option>Sonsonate</option></select>
     </div>
-    <div><label>Módulo / nombre del proyecto (opcional)</label><input id="modulo" type="text" placeholder="Ej: MÓDULO 2, Proyecto Centro Comercial..."></div>
+    <div><label>Módulo / proyecto (opcional)</label><input id="modulo" type="text" placeholder="Ej: MÓDULO 2"></div>
   </div>
 </div>
 
@@ -89,8 +95,7 @@ input,select{width:100%;font-size:13px}
 <div class="sec">
   <div class="st">Agregar producto</div>
   <div class="g2" style="margin-bottom:10px">
-    <div>
-      <label>Categoría</label>
+    <div><label>Categoría</label>
       <select id="categoria" onchange="cargarProductos()">
         <option value="puerta_abatible">Puerta abatible PVC</option>
         <option value="puerta_corrediza_1hoja">Puerta corrediza 1 hoja PVC</option>
@@ -105,128 +110,135 @@ input,select{width:100%;font-size:13px}
     <div><label>Producto específico</label><select id="producto" onchange="mostrarInfo()"></select></div>
   </div>
   <div id="info-precio" class="pinfo" style="display:none"></div>
-
-  <div style="margin-top:10px">
-    <label>Precio unitario ($) — editable</label>
+  <div style="margin-top:10px"><label>Precio unitario ($) — editable</label>
     <input id="precio-edit" type="number" step="0.01" min="0" value="0" oninput="calcPrev();calcPrevU()" style="max-width:180px">
   </div>
-
   <div class="g3" style="margin-top:10px">
-    <div>
-      <label>Tipo de vidrio (si aplica)</label>
+    <div><label>Tipo de vidrio</label>
       <select id="tipo-vidrio">
-        <option value="">— Sin especificar —</option>
-        <option>Claro</option><option>Blanco</option><option>Gris oscuro</option>
-        <option>Gris reflectivo</option><option>Bronce normal</option><option>Bronce reflectivo</option>
-        <option>Azul reflectivo</option><option>Nevado</option>
+        <option value="">— Sin especificar —</option><option>Claro</option><option>Blanco</option><option>Gris oscuro</option>
+        <option>Gris reflectivo</option><option>Bronce normal</option><option>Bronce reflectivo</option><option>Azul reflectivo</option><option>Nevado</option>
       </select>
     </div>
-    <div>
-      <label>Tipo de chapa (si aplica)</label>
+    <div><label>Tipo de chapa</label>
       <select id="tipo-chapa">
-        <option value="">— Sin especificar —</option>
-        <option>Chapa estándar</option><option>Chapa doble seguridad</option>
-        <option>Chapa magnética</option><option>Chapa con llave</option><option>Sin chapa</option>
+        <option value="">— Sin especificar —</option><option>Chapa estándar</option><option>Chapa doble seguridad</option>
+        <option>Chapa residencial (si agrega debe agregar coste adicional de $60 mas)</option><option>Chapa con llave</option><option>Sin chapa</option>
       </select>
     </div>
     <div></div>
   </div>
-
-  <!-- MEDIDAS — siempre visibles, para todos los tipos -->
   <div style="margin-top:12px;padding:10px;background:var(--color-background-secondary);border-radius:var(--border-radius-md)">
     <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px">Medidas del producto</div>
     <div class="g3">
-      <div>
-        <label>Ancho (m)</label>
-        <input id="ancho" type="number" step="0.001" min="0.001" value="1.000" oninput="calcPrev()">
-        <div class="hint3">Ej: 0.805, 1.200</div>
-      </div>
-      <div>
-        <label>Alto (m)</label>
-        <input id="alto" type="number" step="0.001" min="0.001" value="2.100" oninput="calcPrev()">
-        <div class="hint3">Ej: 1.505, 2.100</div>
-      </div>
-      <div id="cantidad-box">
-        <label>Cantidad</label>
-        <input id="cantidad" type="number" min="1" value="1" oninput="calcPrev()">
-      </div>
+      <div><label>Ancho (m)</label><input id="ancho" type="number" step="0.001" min="0.001" value="1.000" oninput="calcPrev()"><div class="hint3">Ej: 0.805</div></div>
+      <div><label>Alto (m)</label><input id="alto" type="number" step="0.001" min="0.001" value="2.100" oninput="calcPrev()"><div class="hint3">Ej: 1.505</div></div>
+      <div id="cantidad-box"><label>Cantidad</label><input id="cantidad" type="number" min="1" value="1" oninput="calcPrev()"></div>
     </div>
     <div id="prev-sub" class="pinfo" style="margin-top:8px"></div>
-    <!-- Para productos por unidad: cantidad separada -->
     <div id="unidad-cant-box" style="display:none;margin-top:8px">
       <label>Cantidad de unidades</label>
       <input id="cantidad_u" type="number" min="1" value="1" oninput="calcPrevU()" style="max-width:160px">
       <div id="prev-sub-u" class="pinfo" style="margin-top:8px"></div>
     </div>
-    <div id="medidas-nota" style="display:none;font-size:11px;color:var(--color-text-secondary);margin-top:6px;padding:4px 8px;background:var(--color-background-primary);border-radius:4px">
-      Las medidas se registran en el PDF pero no afectan el precio (producto por unidad)
-    </div>
+    <div id="medidas-nota" style="display:none;font-size:11px;color:var(--color-text-secondary);margin-top:6px">Las medidas se muestran en el PDF pero no afectan el precio</div>
   </div>
-
-  <div style="margin-top:10px"><label>Descripción adicional (opcional)</label><input id="desc_extra" type="text" placeholder="Notas, color especial, instalación..."></div>
+  <div style="margin-top:10px"><label>Descripción adicional (opcional)</label><input id="desc_extra" type="text" placeholder="Notas, color especial..."></div>
   <button class="add-btn" onclick="agregarItem()">+ Agregar producto a la orden</button>
 </div>
 
 <!-- COSTOS ADICIONALES -->
 <div class="sec">
   <div class="st">Costos adicionales (suman al total)</div>
-  <div class="costo-row">
-    <div style="flex:2;min-width:200px"><label>Descripción del costo adicional</label><input id="ca-desc" type="text" placeholder="Ej: Desmonte de puerta, Transporte especial..."></div>
+  <div class="costo-row" style="margin-bottom:8px">
+    <div style="flex:2;min-width:200px"><label>Descripción</label><input id="ca-desc" type="text" placeholder="Ej: Desmonte de puerta..."></div>
     <div style="flex:1;min-width:120px"><label>Monto ($)</label><input id="ca-monto" type="number" step="0.01" min="0" placeholder="0.00"></div>
     <div style="align-self:flex-end"><button class="add-btn-sec" onclick="agregarCosto()">+ Agregar</button></div>
   </div>
-  <div class="costo-list" id="costos-list"><div style="font-size:12px;color:var(--color-text-tertiary)">No hay costos adicionales.</div></div>
+  <div id="costos-list"><div style="font-size:12px;color:var(--color-text-tertiary)">No hay costos adicionales.</div></div>
+</div>
+
+<!-- DESCUENTO -->
+<div class="desc-sec">
+  <div class="st" style="color:#c0392b">Descuento (opcional)</div>
+  <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
+    <div style="flex:1;min-width:140px"><label>Porcentaje (%)</label><input id="desc-pct" type="number" step="0.5" min="0" max="100" placeholder="0" oninput="recalc()"></div>
+    <div style="flex:2;min-width:200px"><label>Motivo (aparece en PDF)</label><input id="desc-motivo" type="text" placeholder="Ej: Descuento por volumen, cliente especial..."></div>
+  </div>
 </div>
 
 <!-- DETALLE -->
 <div class="sec">
   <div class="st">Detalle de productos</div>
   <div id="detalle"><div class="empty">No hay productos agregados.</div></div>
-  <div id="totales-box" style="display:none;margin-top:12px">
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-top:.5px solid var(--color-border-primary);flex-wrap:wrap;gap:8px">
-      <span style="font-size:13px;color:var(--color-text-secondary)">Subtotal productos:</span>
-      <span style="font-size:18px;font-weight:500;color:#1a3a5c" id="total-prods">$0.00</span>
-    </div>
-    <div id="costos-resumen" style="display:none;border-bottom:.5px solid var(--color-border-tertiary);padding-bottom:8px;margin-bottom:8px"></div>
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;flex-wrap:wrap;gap:8px">
-      <span style="font-size:13px;color:var(--color-text-secondary)">Subtotal total (productos + adicionales):</span>
-      <span style="font-size:20px;font-weight:500;color:#1a3a5c" id="total-calc">$0.00</span>
-    </div>
-    <div style="display:flex;align-items:center;gap:10px;padding-bottom:10px;flex-wrap:wrap">
-      <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--color-text-primary);cursor:pointer;margin:0">
-        <input type="checkbox" id="aplicar-iva" onchange="recalcTotales()" style="width:auto">
-        Aplicar IVA 13%
-      </label>
-      <div id="iva-display" style="font-size:13px;color:#7a5a1a;display:none">IVA: <strong id="iva-val">$0.00</strong></div>
-    </div>
-    <div class="pcards">
-      <div class="pcard sug-int">
-        <div class="monto" id="card-sug">$0.00</div>
-        <div class="etiq">Precio sugerido (solo interno)</div>
+
+  <!-- RESUMEN TOTALES SINCRONIZADO -->
+  <div id="totales-box" style="display:none;margin-top:16px">
+    <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Resumen y pagos</div>
+    <div class="resumen-grid">
+
+      <!-- IZQUIERDA: Cálculo paso a paso -->
+      <div class="resumen-izq">
+        <div class="res-row">
+          <span class="res-label">Subtotal:</span>
+          <span class="res-val" id="r-subtotal">$0.00</span>
+        </div>
+        <div class="res-row" id="r-desc-row" style="display:none">
+          <span class="res-label" id="r-desc-label">Descuento (0%):</span>
+          <span class="res-desc" id="r-desc-val">-$0.00</span>
+        </div>
+        <div class="res-row" id="r-subdesc-row" style="display:none">
+          <span class="res-label">Subtotal con descuento:</span>
+          <span class="res-val" id="r-subdesc">$0.00</span>
+        </div>
+        <div class="res-row" id="r-iva-row" style="display:none">
+          <span class="res-label">IVA (13%):</span>
+          <span class="res-iva" id="r-iva-val">+$0.00</span>
+        </div>
+        <div class="res-total-row">
+          <span class="res-total-label">TOTAL FINAL:</span>
+          <span class="res-total-val" id="r-total">$0.00</span>
+        </div>
+        <div style="margin-top:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--color-text-primary);cursor:pointer;margin:0">
+            <input type="checkbox" id="aplicar-iva" onchange="recalc()" style="width:auto"> Aplicar IVA 13%
+          </label>
+        </div>
+        <div id="sug-note" class="sug-note"></div>
       </div>
-      <div class="pcard iva">
-        <div class="monto" id="card-total-iva">$0.00</div>
-        <div class="etiq">Total con IVA</div>
+
+      <!-- DERECHA: Precio al cliente, anticipo, saldo -->
+      <div class="resumen-der">
+        <div class="der-label">Precio al cliente</div>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <div class="der-val" id="der-precio-auto">$0.00</div>
+          <div style="font-size:11px;color:#2d6a4f;cursor:pointer;background:#e8f5e9;padding:3px 8px;border-radius:12px" onclick="resetPrecio()" id="btn-reset" style="display:none">↺ Usar automático</div>
+        </div>
+        <div class="warn-badge" id="warn-badge">⚠ Precio modificado manualmente</div>
+        <div style="margin-top:8px">
+          <label style="font-size:12px;color:var(--color-text-secondary);margin-bottom:3px;display:block">Ajustar precio al cliente ($)</label>
+          <input id="precio-manual" type="number" step="0.01" placeholder="Dejar vacío = automático" oninput="onPrecioManual()" style="max-width:200px">
+        </div>
+
+        <div style="margin-top:14px;border-top:.5px solid var(--color-border-tertiary);padding-top:12px">
+          <label style="font-size:12px;color:var(--color-text-secondary);margin-bottom:4px;display:block">Forma de pago</label>
+          <select id="forma-pago" style="margin-bottom:10px">
+            <option>Efectivo</option><option>Transferencia bancaria</option><option>Cheque</option><option>Mixto (efectivo + transferencia)</option>
+          </select>
+          <div class="anticipo-input-row">
+            <div style="flex:1;min-width:110px"><label>Anticipo ($)</label><input id="anticipo" type="number" step="0.01" min="0" placeholder="0.00" oninput="calcSaldo()"></div>
+            <div class="pct-badge" id="anticipo-pct">0%</div>
+          </div>
+          <div class="anticipo-row">
+            <span style="color:var(--color-text-secondary);font-size:13px">Saldo pendiente:</span>
+            <span class="saldo-val" id="saldo-val">$0.00</span>
+          </div>
+        </div>
+        <div style="margin-top:10px">
+          <label style="font-size:12px;color:var(--color-text-secondary);margin-bottom:3px;display:block">Nota condiciones de pago</label>
+          <input id="nota-pago" type="text" value="El anticipo debe de ser el 70% y restante 30% cuando ya está todo instalado" style="font-size:12px">
+        </div>
       </div>
-      <div class="pcard saldo">
-        <div class="monto" id="card-saldo">$0.00</div>
-        <div class="etiq">Saldo pendiente</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px">
-      <div style="flex:1;min-width:140px"><label>Precio al cliente ($)</label><input id="precio-sug" type="number" step="1" placeholder="0" oninput="calcPago()"></div>
-      <div style="flex:1;min-width:140px"><label>Anticipo ($)</label><input id="anticipo" type="number" step="1" placeholder="0" oninput="calcPago()"></div>
-      <div style="flex:1;min-width:140px">
-        <label>Forma de pago</label>
-        <select id="forma-pago">
-          <option>Efectivo</option><option>Transferencia bancaria</option>
-          <option>Cheque</option><option>Mixto (efectivo + transferencia)</option>
-        </select>
-      </div>
-    </div>
-    <div style="margin-top:10px">
-      <label>Nota de condiciones de pago (se imprime en cotización)</label>
-      <input id="nota-pago" type="text" value="El anticipo debe de ser el 70% y restante 30% cuando ya está todo instalado">
     </div>
   </div>
 </div>
@@ -237,13 +249,13 @@ input,select{width:100%;font-size:13px}
   <div class="g2">
     <div>
       <label>Foto del producto / puerta</label>
-      <div class="img-ua" onclick="document.getElementById('img-producto').click()">Toca para subir foto del producto</div>
+      <div class="img-ua" onclick="document.getElementById('img-producto').click()">Toca para subir foto</div>
       <input type="file" id="img-producto" accept="image/*" style="display:none" onchange="previewImg('img-producto','prev-producto')">
       <div class="img-prevs" id="prev-producto"></div>
     </div>
     <div>
       <label>Foto del cuaderno de medidas</label>
-      <div class="img-ua" onclick="document.getElementById('img-cuaderno').click()">Toca para subir foto del cuaderno</div>
+      <div class="img-ua" onclick="document.getElementById('img-cuaderno').click()">Toca para subir foto</div>
       <input type="file" id="img-cuaderno" accept="image/*" style="display:none" onchange="previewImg('img-cuaderno','prev-cuaderno')">
       <div class="img-prevs" id="prev-cuaderno"></div>
     </div>
@@ -260,7 +272,8 @@ input,select{width:100%;font-size:13px}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js"></script>
 <script>
-const LOGO_B64 = "Imagen de WhatsApp 2026-03-24 a la 9.52.33 AM.jpeg";
+const LOGO_B64="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";
+
 const CLAUSULAS=[
   {bold:true,t:"Nuestro servicio de Instalacion incluye",rest:": sellado perimetral interno, transporte en el area de San Salvador y Lourde"},
   {t:"NO SE REALIZAN TRABAJOS DE ALBAÑILERIA"},
@@ -271,45 +284,110 @@ const CLAUSULAS=[
   {t:"Despues de la fecha de garantia brindamos el servicio de revision por un costo adicional"},
 ];
 
-let imgProductoB64=null,imgCuadernoB64=null;
-let items=[],costos=[],productoActual=null;
+let imgProductoB64=null,imgCuadernoB64=null,items=[],costos=[],productoActual=null;
+// Estado global de cálculo
+let CALC={subtotal:0,descMonto:0,descPct:0,subDescuento:0,iva:0,totalFinal:0,precioCliente:0,anticipo:0,saldo:0};
+let precioManualActivo=false;
 
-function previewImg(inputId,prevId){
-  const f=document.getElementById(inputId).files[0];if(!f)return;
+function previewImg(iid,pid){
+  const f=document.getElementById(iid).files[0];if(!f)return;
   const r=new FileReader();
-  r.onload=e=>{
-    const b64=e.target.result;
-    if(inputId==='img-producto')imgProductoB64=b64;else imgCuadernoB64=b64;
-    document.getElementById(prevId).innerHTML=`<div class="img-prev"><img src="${b64}"><button class="rmi" onclick="removeImg('${inputId}','${prevId}')">✕</button></div>`;
-  };r.readAsDataURL(f);
+  r.onload=e=>{const b=e.target.result;if(iid==='img-producto')imgProductoB64=b;else imgCuadernoB64=b;document.getElementById(pid).innerHTML=`<div class="img-prev"><img src="${b}"><button class="rmi" onclick="removeImg('${iid}','${pid}')">✕</button></div>`;};
+  r.readAsDataURL(f);
 }
-function removeImg(inputId,prevId){
-  document.getElementById(inputId).value='';document.getElementById(prevId).innerHTML='';
-  if(inputId==='img-producto')imgProductoB64=null;else imgCuadernoB64=null;
-}
-
+function removeImg(iid,pid){document.getElementById(iid).value='';document.getElementById(pid).innerHTML='';if(iid==='img-producto')imgProductoB64=null;else imgCuadernoB64=null;}
 function fmtN(n){return parseFloat(n.toFixed(3)).toString();}
 function fmtM(a,h){return `${fmtN(a)} ancho x ${fmtN(h)} alto`;}
-function precioSug(t){
+function fmt2(n){return n.toFixed(2);}
+
+function precioSugerido(t){
   if(t<=0)return 0;
   const u=[5,10,25,50,100];
   for(const v of u){const r=Math.ceil(t/v)*v;if(r-t<=v*0.4)return r;}
   return Math.ceil(t/25)*25;
 }
 
+// CÁLCULO CENTRAL — todo pasa por aquí
+function recalc(){
+  const subProds=items.reduce((s,i)=>s+i.subtotal,0);
+  const subCostos=costos.reduce((s,c)=>s+c.monto,0);
+  const subtotal=parseFloat((subProds+subCostos).toFixed(2));
+  const descPct=parseFloat(document.getElementById('desc-pct').value)||0;
+  const descMonto=parseFloat((subtotal*descPct/100).toFixed(2));
+  const subDescuento=parseFloat((subtotal-descMonto).toFixed(2));
+  const aplicaIva=document.getElementById('aplicar-iva').checked;
+  const iva=aplicaIva?parseFloat((subDescuento*0.13).toFixed(2)):0;
+  const totalFinal=parseFloat((subDescuento+iva).toFixed(2));
+
+  // Precio al cliente: automático salvo que el usuario lo haya tocado
+  let precioManual=parseFloat(document.getElementById('precio-manual').value);
+  let precioCliente=totalFinal;
+  if(!isNaN(precioManual)&&document.getElementById('precio-manual').value.trim()!==''){
+    precioCliente=precioManual;
+    precioManualActivo=true;
+  } else {
+    precioManualActivo=false;
+  }
+
+  const anticipo=parseFloat(document.getElementById('anticipo').value)||0;
+  const saldo=Math.max(0,parseFloat((precioCliente-anticipo).toFixed(2)));
+  const pct=precioCliente>0?((anticipo/precioCliente)*100).toFixed(0):0;
+
+  // Guardar estado
+  CALC={subtotal,descMonto,descPct,subDescuento,iva,totalFinal,precioCliente,anticipo,saldo,aplicaIva};
+
+  // Actualizar UI izquierda
+  document.getElementById('r-subtotal').textContent='$'+fmt2(subtotal);
+  if(descPct>0){
+    document.getElementById('r-desc-row').style.display='flex';
+    document.getElementById('r-subdesc-row').style.display='flex';
+    document.getElementById('r-desc-label').textContent=`Descuento (${descPct}%):`;
+    document.getElementById('r-desc-val').textContent='-$'+fmt2(descMonto);
+    document.getElementById('r-subdesc').textContent='$'+fmt2(subDescuento);
+  } else {
+    document.getElementById('r-desc-row').style.display='none';
+    document.getElementById('r-subdesc-row').style.display='none';
+  }
+  document.getElementById('r-iva-row').style.display=aplicaIva?'flex':'none';
+  document.getElementById('r-iva-val').textContent='+$'+fmt2(iva);
+  document.getElementById('r-total').textContent='$'+fmt2(totalFinal);
+
+  // Actualizar UI derecha
+  document.getElementById('der-precio-auto').textContent='$'+fmt2(precioCliente);
+  const warn=document.getElementById('warn-badge');
+  warn.style.display=precioManualActivo&&precioCliente!==totalFinal?'block':'none';
+  const btnR=document.getElementById('btn-reset');
+  btnR.style.display=precioManualActivo?'inline-block':'none';
+
+  document.getElementById('anticipo-pct').textContent=pct+'%';
+  document.getElementById('saldo-val').textContent='$'+fmt2(saldo);
+
+  // Precio sugerido (solo como nota interna)
+  const sug=precioSugerido(totalFinal);
+  const sugNote=document.getElementById('sug-note');
+  if(sug>0&&sug!==totalFinal){
+    sugNote.style.display='block';
+    sugNote.textContent=`💡 Precio sugerido (uso interno): $${fmt2(sug)}`;
+  } else sugNote.style.display='none';
+}
+
+function calcSaldo(){recalc();}
+function onPrecioManual(){recalc();}
+function resetPrecio(){document.getElementById('precio-manual').value='';precioManualActivo=false;recalc();}
+
 const DB={
   puerta_abatible:[
-    {n:'Puerta abatible PVC blanco SIN diseño — 0.90-1.00m x 2.00-2.10m',tipo:'unidad',precio:235,nota:'Incluye chapa, contramarco y bisagras'},
+    {n:'Puerta abatible PVC blanco SIN diseño — 0.90-1.00m x 2.00-2.10m',tipo:'unidad',precio:255,nota:'Incluye chapa, contramarco y bisagras'},
     {n:'Puerta abatible PVC blanco SIN diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:275,nota:'Incluye chapa, contramarco y bisagras'},
-    {n:'Puerta abatible PVC madera SIN diseño — 0.80-1.10m x 2.00-2.10m',tipo:'unidad',precio:350,nota:'Incluye chapa, contramarco y bisagras'},
+    {n:'Puerta abatible PVC madera SIN diseño — 0.80-1.10m x 2.00-2.10m',tipo:'unidad',precio:365,nota:'Incluye chapa, contramarco y bisagras'},
     {n:'Puerta abatible PVC madera SIN diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:410,nota:'Incluye chapa, contramarco y bisagras'},
-    {n:'Puerta abatible PVC negro foliado SIN diseño — 0.80-1.10m x 2.00-2.10m',tipo:'unidad',precio:260,nota:'Incluye chapa, contramarco y bisagras'},
-    {n:'Puerta abatible PVC negro foliado SIN diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:315,nota:'Incluye chapa, contramarco y bisagras'},
-    {n:'Puerta abatible PVC blanco CON diseño — 0.60-1.10m x 2.10m',tipo:'unidad',precio:275,nota:'Incluye chapa, contramarco y bisagras'},
-    {n:'Puerta abatible PVC blanco CON diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:315,nota:'Incluye chapa, contramarco y bisagras'},
-    {n:'Puerta abatible PVC madera CON diseño — 1.00-1.10m x 2.00-2.10m',tipo:'unidad',precio:385,nota:'Incluye chapa, contramarco y bisagras'},
+    {n:'Puerta abatible PVC negro foliado SIN diseño — 0.80-1.10m x 2.00-2.10m',tipo:'unidad',precio:300,nota:'Incluye chapa, contramarco y bisagras'},
+    {n:'Puerta abatible PVC negro foliado SIN diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:325,nota:'Incluye chapa, contramarco y bisagras'},
+    {n:'Puerta abatible PVC blanco CON diseño — 0.60-1.10m x 2.10m',tipo:'unidad',precio:290,nota:'Incluye chapa, contramarco y bisagras'},
+    {n:'Puerta abatible PVC blanco CON diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:325,nota:'Incluye chapa, contramarco y bisagras'},
+    {n:'Puerta abatible PVC madera CON diseño — 1.00-1.10m x 2.00-2.10m',tipo:'unidad',precio:390,nota:'Incluye chapa, contramarco y bisagras'},
     {n:'Puerta abatible PVC madera CON diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:445,nota:'Incluye chapa, contramarco y bisagras'},
-    {n:'Puerta abatible PVC negro foliado CON diseño — 1.00-1.10m x 2.00-2.10m',tipo:'unidad',precio:300,nota:'Incluye chapa, contramarco y bisagras'},
+    {n:'Puerta abatible PVC negro foliado CON diseño — 1.00-1.10m x 2.00-2.10m',tipo:'unidad',precio:335,nota:'Incluye chapa, contramarco y bisagras'},
     {n:'Puerta abatible PVC negro CON diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:360,nota:'Incluye chapa, contramarco y bisagras'},
   ],
   puerta_corrediza_1hoja:[
@@ -320,20 +398,20 @@ const DB={
     {n:'Puerta corrediza 1 hoja PVC madera SIN diseño — 0.90-1.10m x 2.10m',tipo:'unidad',precio:355},
     {n:'Puerta corrediza 1 hoja PVC madera SIN diseño — 1.10-1.20m x 2.10-2.20m',tipo:'unidad',precio:415},
   ],
-  bano:[{n:'Puerta corrediza baño 2 hojas PVC blanco',tipo:'m2',precio:110},{n:'Puerta corrediza baño 2 hojas PVC negro',tipo:'m2',precio:135},{n:'Puerta corrediza baño 2 hojas PVC madera',tipo:'m2',precio:140}],
+  bano:[{n:'Puerta corrediza baño 2 hojas PVC blanco',tipo:'m2',precio:115},{n:'Puerta corrediza baño 2 hojas PVC negro',tipo:'m2',precio:135},{n:'Puerta corrediza baño 2 hojas PVC madera',tipo:'m2',precio:140}],
   jardin:[{n:'Puerta corrediza jardín 2-3-4 hojas PVC blanco con mosquitero',tipo:'m2',precio:150},{n:'Puerta corrediza jardín 2-3-4 hojas PVC negro con mosquitero',tipo:'m2',precio:170},{n:'Puerta corrediza jardín 2-3-4 hojas PVC madera con mosquitero',tipo:'m2',precio:175}],
   ventana_corrediza:[
-    {n:'Ventana corrediza PVC blanco SIN mosquitero — perfil S60',tipo:'m2',precio:85,nota:'Altura máxima recomendada 1.20m'},
-    {n:'Ventana corrediza PVC blanco CON mosquitero — perfil HN/S80',tipo:'m2',precio:95,nota:'Si alto > 1.20m usar perfil S80'},
+    {n:'Ventana corrediza PVC blanco SIN mosquitero — perfil S60',tipo:'m2',precio:90,nota:'Altura máxima recomendada 1.20m'},
+    {n:'Ventana corrediza PVC blanco CON mosquitero — perfil HN/S80',tipo:'m2',precio:100,nota:'Si alto > 1.20m usar perfil S80'},
     {n:'Ventana corrediza PVC blanco CON mosquitero — perfil S80',tipo:'m2',precio:110},
     {n:'Ventana corrediza PVC negro SIN mosquitero — perfil S60',tipo:'m2',precio:140},
     {n:'Ventana corrediza PVC negro CON mosquitero — perfil S80',tipo:'m2',precio:150},
     {n:'Ventana corrediza PVC madera SIN mosquitero — perfil S60',tipo:'m2',precio:145},
     {n:'Ventana corrediza PVC madera CON mosquitero — perfil S80',tipo:'m2',precio:155},
   ],
-  ventana_guillotina:[{n:'Ventana guillotina PVC blanco con mosquitero fijo',tipo:'m2',precio:110},{n:'Ventana guillotina PVC negro con mosquitero fijo',tipo:'m2',precio:130},{n:'Ventana guillotina PVC madera con mosquitero fijo',tipo:'m2',precio:135}],
+  ventana_guillotina:[{n:'Ventana guillotina PVC blanco con mosquitero fijo',tipo:'m2',precio:125},{n:'Ventana guillotina PVC negro con mosquitero fijo',tipo:'m2',precio:135},{n:'Ventana guillotina PVC madera con mosquitero fijo',tipo:'m2',precio:145}],
   ventana_proyectable:[{n:'Ventana proyectable PVC blanco',tipo:'m2',precio:140},{n:'Ventana proyectable PVC negro',tipo:'m2',precio:165},{n:'Ventana proyectable PVC madera',tipo:'m2',precio:165}],
-  vidrio_fijo:[{n:'Vidrio fijo PVC blanco',tipo:'m2',precio:75},{n:'Vidrio fijo PVC negro',tipo:'m2',precio:110},{n:'Vidrio fijo PVC madera',tipo:'m2',precio:115}],
+  vidrio_fijo:[{n:'Vidrio fijo PVC blanco',tipo:'m2',precio:100},{n:'Vidrio fijo PVC negro',tipo:'m2',precio:110},{n:'Vidrio fijo PVC madera',tipo:'m2',precio:115}],
 };
 
 function cargarProductos(){
@@ -342,164 +420,91 @@ function cargarProductos(){
   mostrarInfo();
 }
 function mostrarInfo(){
-  const cat=document.getElementById('categoria').value;
-  const idx=parseInt(document.getElementById('producto').value);
-  productoActual=DB[cat][idx];
-  const p=productoActual;
+  const cat=document.getElementById('categoria').value,idx=parseInt(document.getElementById('producto').value);
+  productoActual=DB[cat][idx];const p=productoActual;
   const tTag=p.tipo==='m2'?'<span class="tag tag-m2">Precio por m²</span>':'<span class="tag tag-unit">Precio por unidad</span>';
   document.getElementById('info-precio').style.display='block';
-  document.getElementById('info-precio').innerHTML=`<strong>$${p.precio.toFixed(2)}</strong> ${tTag}${p.nota?`<div class="nota">${p.nota}</div>`:''}`;
+  document.getElementById('info-precio').innerHTML=`<strong>$${p.precio.toFixed(2)}</strong> ${tTag}${p.nota?`<div class="nota-field">${p.nota}</div>`:''}`;
   document.getElementById('precio-edit').value=p.precio.toFixed(2);
-
-  if(p.tipo==='m2'){
-    // m2: cantidad en la fila de medidas, no mostrar unidad-cant
-    document.getElementById('cantidad-box').style.display='block';
-    document.getElementById('unidad-cant-box').style.display='none';
-    document.getElementById('medidas-nota').style.display='none';
-  } else {
-    // unidad: medidas solo informativas, cantidad separada
-    document.getElementById('cantidad-box').style.display='none';
-    document.getElementById('unidad-cant-box').style.display='block';
-    document.getElementById('medidas-nota').style.display='block';
-  }
+  if(p.tipo==='m2'){document.getElementById('cantidad-box').style.display='block';document.getElementById('unidad-cant-box').style.display='none';document.getElementById('medidas-nota').style.display='none';}
+  else{document.getElementById('cantidad-box').style.display='none';document.getElementById('unidad-cant-box').style.display='block';document.getElementById('medidas-nota').style.display='block';}
   calcPrev();calcPrevU();
 }
-
-function getPrecioEdit(){return parseFloat(document.getElementById('precio-edit').value)||0;}
-
+function getPE(){return parseFloat(document.getElementById('precio-edit').value)||0;}
 function calcPrev(){
   if(!productoActual||productoActual.tipo!=='m2')return;
-  const a=parseFloat(document.getElementById('ancho').value)||0;
-  const h=parseFloat(document.getElementById('alto').value)||0;
-  const q=parseInt(document.getElementById('cantidad').value)||0;
-  const p=getPrecioEdit();
-  const area=parseFloat((a*h).toFixed(6));
-  const sub=parseFloat((area*p*q).toFixed(2));
+  const a=parseFloat(document.getElementById('ancho').value)||0,h=parseFloat(document.getElementById('alto').value)||0,q=parseInt(document.getElementById('cantidad').value)||0,p=getPE();
+  const area=parseFloat((a*h).toFixed(6)),sub=parseFloat((area*p*q).toFixed(2));
   document.getElementById('prev-sub').innerHTML=`<strong>${fmtM(a,h)}</strong> | Área: <strong>${area.toFixed(3)} m²</strong> | Subtotal: <strong style="color:#1a3a5c">$${sub.toFixed(2)}</strong>`;
 }
 function calcPrevU(){
   if(!productoActual||productoActual.tipo!=='unidad')return;
-  const q=parseInt(document.getElementById('cantidad_u').value)||0;
-  const p=getPrecioEdit();
-  const a=parseFloat(document.getElementById('ancho').value)||0;
-  const h=parseFloat(document.getElementById('alto').value)||0;
-  document.getElementById('prev-sub').innerHTML=`Medidas registradas: <strong>${fmtM(a,h)}</strong> (solo referencia, no afecta precio)`;
+  const q=parseInt(document.getElementById('cantidad_u').value)||0,p=getPE();
+  const a=parseFloat(document.getElementById('ancho').value)||0,h=parseFloat(document.getElementById('alto').value)||0;
+  document.getElementById('prev-sub').innerHTML=`Medidas: <strong>${fmtM(a,h)}</strong> (solo referencia)`;
   document.getElementById('prev-sub-u').innerHTML=`Subtotal: <strong style="color:#1a3a5c">$${(p*q).toFixed(2)}</strong>`;
 }
 
-function recalcTotales(){
-  const subProds=items.reduce((s,i)=>s+i.subtotal,0);
-  const subCostos=costos.reduce((s,c)=>s+c.monto,0);
-  const subTotal=parseFloat((subProds+subCostos).toFixed(2));
-  const aplicaIva=document.getElementById('aplicar-iva').checked;
-  const iva=aplicaIva?parseFloat((subTotal*0.13).toFixed(2)):0;
-  const totalIva=parseFloat((subTotal+iva).toFixed(2));
-
-  document.getElementById('total-prods').textContent='$'+subProds.toFixed(2);
-  document.getElementById('total-calc').textContent='$'+subTotal.toFixed(2);
-  document.getElementById('iva-val').textContent='$'+iva.toFixed(2);
-  document.getElementById('iva-display').style.display=aplicaIva?'inline-block':'none';
-  document.getElementById('card-total-iva').textContent='$'+totalIva.toFixed(2);
-  document.getElementById('card-sug').textContent='$'+precioSug(totalIva).toFixed(2);
-
-  // Resumen costos adicionales
-  const cr=document.getElementById('costos-resumen');
-  if(costos.length>0){
-    cr.style.display='block';
-    cr.innerHTML=costos.map(c=>`<div style="display:flex;justify-content:space-between;font-size:12px;padding:3px 0"><span style="color:var(--color-text-secondary)">+ ${c.desc}</span><span style="color:#2d6a4f">$${c.monto.toFixed(2)}</span></div>`).join('')+
-    `<div style="display:flex;justify-content:space-between;font-size:12px;padding:3px 0;border-top:.5px solid var(--color-border-tertiary);margin-top:3px"><span style="color:var(--color-text-secondary)">Total costos adicionales:</span><span style="color:#2d6a4f;font-weight:500">$${subCostos.toFixed(2)}</span></div>`;
-  } else cr.style.display='none';
-
-  const sug=document.getElementById('precio-sug');
-  if(!sug.value){sug.value=precioSug(totalIva);}
-  calcPago();
-}
-
-function calcPago(){
-  const total=parseFloat(document.getElementById('precio-sug').value)||0;
-  const anticipo=parseFloat(document.getElementById('anticipo').value)||0;
-  const saldo=Math.max(0,total-anticipo);
-  const pct=total>0?((anticipo/total)*100).toFixed(0):0;
-  document.getElementById('card-anticipo')?document.getElementById('card-anticipo').textContent='$'+anticipo.toFixed(2):'';
-  document.getElementById('card-pct')?document.getElementById('card-pct').textContent=pct+'%':'';
-  document.getElementById('card-saldo').textContent='$'+saldo.toFixed(2);
-}
-
 function agregarCosto(){
-  const desc=document.getElementById('ca-desc').value.trim();
-  const monto=parseFloat(document.getElementById('ca-monto').value)||0;
+  const desc=document.getElementById('ca-desc').value.trim(),monto=parseFloat(document.getElementById('ca-monto').value)||0;
   if(!desc||monto<=0)return;
-  costos.push({desc,monto});
-  document.getElementById('ca-desc').value='';document.getElementById('ca-monto').value='';
-  renderCostos();
-  if(items.length>0)recalcTotales();
+  costos.push({desc,monto});document.getElementById('ca-desc').value='';document.getElementById('ca-monto').value='';
+  renderCostos();if(items.length>0)recalc();
 }
-function eliminarCosto(idx){costos.splice(idx,1);renderCostos();if(items.length>0)recalcTotales();}
+function eliminarCosto(idx){costos.splice(idx,1);renderCostos();if(items.length>0)recalc();}
 function renderCostos(){
   const c=document.getElementById('costos-list');
-  if(costos.length===0){c.innerHTML='<div style="font-size:12px;color:var(--color-text-tertiary)">No hay costos adicionales.</div>';return;}
-  c.innerHTML=costos.map((ci,i)=>`<div class="costo-item"><span class="ci-desc">${ci.desc}</span><span style="display:flex;align-items:center;gap:8px"><span class="ci-monto">+$${ci.monto.toFixed(2)}</span><button class="del" onclick="eliminarCosto(${i})">✕</button></span></div>`).join('');
+  if(!costos.length){c.innerHTML='<div style="font-size:12px;color:var(--color-text-tertiary)">No hay costos adicionales.</div>';return;}
+  c.innerHTML=costos.map((ci,i)=>`<div class="costo-item"><span>${ci.desc}</span><span style="display:flex;align-items:center;gap:8px"><span style="color:#2d6a4f;font-weight:500">+$${ci.monto.toFixed(2)}</span><button class="del" onclick="eliminarCosto(${i})">✕</button></span></div>`).join('');
 }
 
 function agregarItem(){
   const p=productoActual;if(!p)return;
-  const desc=document.getElementById('desc_extra').value;
-  const vidrio=document.getElementById('tipo-vidrio').value;
-  const chapa=document.getElementById('tipo-chapa').value;
-  const precioUd=getPrecioEdit();
-  const ancho=parseFloat(document.getElementById('ancho').value)||0;
-  const alto=parseFloat(document.getElementById('alto').value)||0;
+  const desc=document.getElementById('desc_extra').value,vidrio=document.getElementById('tipo-vidrio').value,chapa=document.getElementById('tipo-chapa').value;
+  const precioUd=getPE(),ancho=parseFloat(document.getElementById('ancho').value)||0,alto=parseFloat(document.getElementById('alto').value)||0;
   let subtotal,medidas,area=null,cantidad;
-
   if(p.tipo==='m2'){
     cantidad=parseInt(document.getElementById('cantidad').value)||1;
-    area=parseFloat((ancho*alto).toFixed(6));
-    subtotal=parseFloat((area*precioUd*cantidad).toFixed(2));
-    medidas=fmtM(ancho,alto);
-    items.push({nombre:p.n,tipo:'m2',precio:precioUd,cantidad,medidas,area,subtotal,desc,vidrio,chapa,ancho,alto});
+    area=parseFloat((ancho*alto).toFixed(6));subtotal=parseFloat((area*precioUd*cantidad).toFixed(2));medidas=fmtM(ancho,alto);
+    items.push({nombre:p.n,tipo:'m2',precio:precioUd,cantidad,medidas,area,subtotal,desc,vidrio,chapa});
   } else {
-    // UNIDAD: medidas solo informativas
     cantidad=parseInt(document.getElementById('cantidad_u').value)||1;
-    subtotal=parseFloat((precioUd*cantidad).toFixed(2));
-    medidas=fmtM(ancho,alto); // medidas informativas
-    items.push({nombre:p.n,tipo:'unidad',precio:precioUd,cantidad,medidas,area:null,subtotal,desc,vidrio,chapa,ancho,alto,soloRef:true});
+    subtotal=parseFloat((precioUd*cantidad).toFixed(2));medidas=fmtM(ancho,alto);
+    items.push({nombre:p.n,tipo:'unidad',precio:precioUd,cantidad,medidas,area:null,subtotal,desc,vidrio,chapa});
   }
-  document.getElementById('desc_extra').value='';
-  document.getElementById('tipo-vidrio').value='';
-  document.getElementById('tipo-chapa').value='';
+  document.getElementById('desc_extra').value='';document.getElementById('tipo-vidrio').value='';document.getElementById('tipo-chapa').value='';
   renderDetalle();
 }
-
 function renderDetalle(){
   const c=document.getElementById('detalle');
-  if(items.length===0){c.innerHTML='<div class="empty">No hay productos agregados.</div>';document.getElementById('totales-box').style.display='none';return;}
+  if(!items.length){c.innerHTML='<div class="empty">No hay productos agregados.</div>';document.getElementById('totales-box').style.display='none';return;}
   const rows=items.map((it,idx)=>`<tr>
     <td>${it.cantidad}</td>
     <td style="max-width:190px">${it.nombre}${it.vidrio?'<br><span style="font-size:11px;color:var(--color-text-secondary)">Vidrio: '+it.vidrio+'</span>':''}${it.chapa?'<br><span style="font-size:11px;color:var(--color-text-secondary)">Chapa: '+it.chapa+'</span>':''}${it.desc?'<br><span style="font-size:11px;color:var(--color-text-secondary)">'+it.desc+'</span>':''}</td>
-    <td>${it.medidas}${it.tipo==='m2'?'<br><span style="font-size:11px;color:var(--color-text-secondary)">área: '+it.area.toFixed(3)+' m²</span>':'<br><span style="font-size:10px;color:var(--color-text-tertiary)">(referencia)</span>'}</td>
+    <td>${it.medidas}${it.tipo==='m2'?'<br><span style="font-size:11px;color:var(--color-text-secondary)">área: '+it.area.toFixed(3)+' m²</span>':''}</td>
     <td>$${it.precio.toFixed(2)}/${it.tipo==='m2'?'m²':'ud'}</td>
     <td style="font-weight:500;color:#1a3a5c">$${it.subtotal.toFixed(2)}</td>
     <td><button class="del" onclick="eliminar(${idx})">✕</button></td>
   </tr>`).join('');
   c.innerHTML=`<table class="tbl"><thead><tr><th>Cant.</th><th>Descripción</th><th>Medidas</th><th>Precio unit.</th><th>Subtotal</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
   document.getElementById('totales-box').style.display='block';
-  document.getElementById('precio-sug').value='';
-  recalcTotales();
+  document.getElementById('precio-manual').value='';
+  precioManualActivo=false;
+  recalc();
 }
 function eliminar(idx){items.splice(idx,1);renderDetalle();}
 
 function limpiarTodo(){
-  items=[];costos=[];imgProductoB64=null;imgCuadernoB64=null;
+  items=[];costos=[];imgProductoB64=null;imgCuadernoB64=null;precioManualActivo=false;
   renderDetalle();renderCostos();
-  ['cliente','telefono','direccion','vendedor','modulo','desc_extra','anticipo','precio-sug','ca-desc','ca-monto'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  ['cliente','telefono','direccion','vendedor','modulo','desc_extra','anticipo','precio-manual','ca-desc','ca-monto','desc-pct','desc-motivo'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
   ['img-producto','img-cuaderno'].forEach(id=>document.getElementById(id).value='');
   ['prev-producto','prev-cuaderno'].forEach(id=>document.getElementById(id).innerHTML='');
-  ['card-saldo','card-sug','card-total-iva'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent='$0.00';});
   document.getElementById('aplicar-iva').checked=false;
-  document.getElementById('iva-display').style.display='none';
   document.getElementById('nota-pago').value='El anticipo debe de ser el 70% y restante 30% cuando ya está todo instalado';
 }
 
+// ===== PDF =====
 function hdrPDF(doc,titulo,numDoc){
   const W=doc.internal.pageSize.getWidth(),az=[26,58,92],bl=[255,255,255];
   const fecha=new Date().toLocaleDateString('es-SV',{day:'2-digit',month:'2-digit',year:'numeric'});
@@ -508,20 +513,14 @@ function hdrPDF(doc,titulo,numDoc){
   doc.setTextColor(...bl);doc.setFontSize(20);doc.setFont('helvetica','bold');
   doc.text(titulo,W/2+8,20,{align:'center'});
   doc.setFontSize(9);doc.setFont('helvetica','normal');doc.text('Fecha: '+new Date().toLocaleDateString('es-SV',{day:'2-digit',month:'2-digit',year:'numeric'}),W/2+8,30,{align:'center'});
-  doc.setFontSize(8);doc.text('No. '+numDoc,W-12,16,{align:'right'});
-  doc.text('Sucursal: '+document.getElementById('sucursal').value,W-12,25,{align:'right'});
+  doc.setFontSize(8);doc.text('No. '+numDoc,W-12,16,{align:'right'});doc.text('Sucursal: '+document.getElementById('sucursal').value,W-12,25,{align:'right'});
 }
-
 function datosPDF(doc,y,conDir){
   const W=doc.internal.pageSize.getWidth(),az=[26,58,92],ng=[30,30,30],gr=[245,247,250],gm=[180,190,200];
-  const cliente=document.getElementById('cliente').value||'—';
-  const tel=document.getElementById('telefono').value||'—';
-  const dir=document.getElementById('direccion').value||'—';
-  const vend=document.getElementById('vendedor').value||'—';
-  const suc=document.getElementById('sucursal').value;
-  const h=conDir?46:38;
-  doc.setFillColor(...gr);doc.rect(10,y-4,W-20,h,'F');
-  doc.setDrawColor(...gm);doc.setLineWidth(.2);doc.rect(10,y-4,W-20,h,'S');
+  const cliente=document.getElementById('cliente').value||'—',tel=document.getElementById('telefono').value||'—';
+  const dir=document.getElementById('direccion').value||'—',vend=document.getElementById('vendedor').value||'—';
+  const suc=document.getElementById('sucursal').value,h=conDir?46:38;
+  doc.setFillColor(...gr);doc.rect(10,y-4,W-20,h,'F');doc.setDrawColor(...gm);doc.setLineWidth(.2);doc.rect(10,y-4,W-20,h,'S');
   doc.setTextColor(...az);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('DATOS DEL CLIENTE',14,y+2);
   doc.setTextColor(...ng);doc.setFontSize(9);
   doc.setFont('helvetica','bold');doc.text('Cliente:',14,y+11);doc.setFont('helvetica','normal');doc.text(cliente,38,y+11);
@@ -532,12 +531,10 @@ function datosPDF(doc,y,conDir){
   } else {
     doc.setFont('helvetica','bold');doc.text('Vendedor:',14,y+29);doc.setFont('helvetica','normal');doc.text(vend,38,y+29);
   }
-  const c2=W/2+2;
-  doc.setDrawColor(...gm);doc.line(W/2-2,y,W/2-2,y+h-5);
+  const c2=W/2+2;doc.setDrawColor(...gm);doc.line(W/2-2,y,W/2-2,y+h-5);
   doc.setFont('helvetica','bold');doc.text('Sucursal:',c2,y+11);doc.setFont('helvetica','normal');doc.text(suc,c2+22,y+11);
   return y+h+8;
 }
-
 function ftrPDF(doc){
   const W=doc.internal.pageSize.getWidth(),H=doc.internal.pageSize.getHeight(),az=[26,58,92],bl=[255,255,255];
   doc.setFillColor(...az);doc.rect(0,H-10,W,10,'F');
@@ -550,113 +547,89 @@ function generarCotizacion(){
   const doc=new jsPDF({unit:'mm',format:'a4'});
   const W=doc.internal.pageSize.getWidth(),numDoc='COT-'+Date.now().toString().slice(-6);
   const az=[26,58,92],bl=[255,255,255],gr=[245,247,250],gm=[180,190,200],ng=[30,30,30];
-  const subProds=items.reduce((s,i)=>s+i.subtotal,0);
-  const subCostos=costos.reduce((s,c)=>s+c.monto,0);
-  const subTotal=parseFloat((subProds+subCostos).toFixed(2));
-  const aplicaIva=document.getElementById('aplicar-iva').checked;
-  const iva=aplicaIva?parseFloat((subTotal*0.13).toFixed(2)):0;
-  const totalIva=parseFloat((subTotal+iva).toFixed(2));
-  const precioCliente=parseFloat(document.getElementById('precio-sug').value)||0;
-  const anticipo=parseFloat(document.getElementById('anticipo').value)||0;
-  const saldo=Math.max(0,precioCliente-anticipo);
-  const pct=precioCliente>0?((anticipo/precioCliente)*100).toFixed(0):0;
-  const formaPago=document.getElementById('forma-pago').value;
+  // Usar exactamente los valores de CALC
+  const {subtotal,descMonto,descPct,subDescuento,iva,totalFinal,precioCliente,anticipo,saldo,aplicaIva}=CALC;
+  const descMotivo=document.getElementById('desc-motivo').value;
   const modulo=document.getElementById('modulo').value;
   const notaPago=document.getElementById('nota-pago').value;
+  const pct=precioCliente>0?((anticipo/precioCliente)*100).toFixed(0):0;
+  const formaPago=document.getElementById('forma-pago').value;
 
   hdrPDF(doc,'COTIZACIÓN',numDoc);
   let y=datosPDF(doc,52,true);
-
   doc.setTextColor(...az);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('DETALLE DE PRODUCTOS',14,y);y+=3;
 
   const filas=items.map(it=>{
-    let ex=[];
-    if(it.vidrio)ex.push('Vidrio: '+it.vidrio);
-    if(it.chapa)ex.push('Chapa: '+it.chapa);
-    if(it.desc)ex.push(it.desc);
-    const medidasTxt=it.tipo==='m2'?it.medidas+'\n(área: '+it.area.toFixed(3)+' m²)':it.medidas;
-    return[it.cantidad.toString(),it.nombre+(ex.length?'\n'+ex.join(' | '):''),medidasTxt,'$'+it.precio.toFixed(2)+'/'+(it.tipo==='m2'?'m²':'ud'),'$'+it.subtotal.toFixed(2)];
+    let ex=[];if(it.vidrio)ex.push('Vidrio: '+it.vidrio);if(it.chapa)ex.push('Chapa: '+it.chapa);if(it.desc)ex.push(it.desc);
+    const med=it.tipo==='m2'?it.medidas+'\n(área: '+it.area.toFixed(3)+' m²)':it.medidas;
+    return[it.cantidad.toString(),it.nombre+(ex.length?'\n'+ex.join(' | '):''),med,'$'+it.precio.toFixed(2)+'/'+(it.tipo==='m2'?'m²':'ud'),'$'+it.subtotal.toFixed(2)];
   });
-
   let bodyRows=filas;
-  if(modulo){
-    bodyRows=[
-      [{content:modulo,colSpan:5,styles:{halign:'center',fontStyle:'bold',fillColor:az,textColor:bl}}],
-      ...filas
-    ];
-  }
-
-  // Costos adicionales como filas extra
-  if(costos.length>0){
-    bodyRows=[...bodyRows,
-      [{content:'COSTOS ADICIONALES',colSpan:5,styles:{halign:'center',fontStyle:'bold',fillColor:[80,120,80],textColor:bl,fontSize:7}}],
-      ...costos.map(ci=>['',ci.desc,'—','—','$'+ci.monto.toFixed(2)])
-    ];
-  }
+  if(modulo)bodyRows=[{content:modulo,colSpan:5,styles:{halign:'center',fontStyle:'bold',fillColor:az,textColor:bl}},...filas];
+  if(costos.length>0)bodyRows=[...bodyRows,[{content:'COSTOS ADICIONALES',colSpan:5,styles:{halign:'center',fontStyle:'bold',fillColor:[80,120,80],textColor:bl,fontSize:7}}],...costos.map(ci=>['',ci.desc,'—','—','$'+ci.monto.toFixed(2)])];
 
   doc.autoTable({startY:y,head:[['Cant.','Descripción','Medidas','Precio unit.','Subtotal']],body:bodyRows,styles:{fontSize:8,cellPadding:3,textColor:ng},headStyles:{fillColor:az,textColor:bl,fontStyle:'bold',fontSize:7},alternateRowStyles:{fillColor:gr},columnStyles:{0:{halign:'center',cellWidth:14},1:{cellWidth:74},2:{halign:'left',cellWidth:36},3:{halign:'center',cellWidth:28},4:{halign:'right',cellWidth:22,fontStyle:'bold'}},margin:{left:10,right:10},tableWidth:W-20});
 
   let fy=doc.lastAutoTable.finalY+4;
 
-  // Caja RESUMEN
-  const cajaH=notaPago?64:52;
-  doc.setFillColor(...gr);doc.rect(10,fy,W-20,cajaH,'F');
-  doc.setDrawColor(...gm);doc.rect(10,fy,W-20,cajaH,'S');
+  // ===== CAJA RESUMEN PDF — exactamente los mismos valores =====
+  // Calcular altura dinámica
+  let rowsR=[];
+  rowsR.push({label:'Subtotal:',val:'$'+fmt2(subtotal),color:ng});
+  if(descPct>0){
+    rowsR.push({label:`Descuento (${descPct}%)${descMotivo?' — '+descMotivo:''}:`  ,val:'-$'+fmt2(descMonto),color:[192,57,43]});
+    rowsR.push({label:'Subtotal con descuento:',val:'$'+fmt2(subDescuento),color:ng});
+  }
+  if(aplicaIva) rowsR.push({label:'IVA (13%):',val:'+$'+fmt2(iva),color:[183,119,13]});
+
+  const cajaH=Math.max(60, rowsR.length*12+36+(notaPago?14:0));
+  doc.setFillColor(...gr);doc.rect(10,fy,W-20,cajaH,'F');doc.setDrawColor(...gm);doc.rect(10,fy,W-20,cajaH,'S');
   doc.setDrawColor(...gm);doc.line(W/2-10,fy,W/2-10,fy+cajaH);doc.line(W/2+30,fy,W/2+30,fy+cajaH);
 
-  // Col1
+  // Col1: Resumen
   doc.setTextColor(...az);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('RESUMEN',14,fy+8);
-  doc.setTextColor(...ng);doc.setFontSize(8);doc.setFont('helvetica','normal');
-  doc.text('Subtotal:',14,fy+17);doc.text('$'+subTotal.toFixed(2),55,fy+17);
-  if(aplicaIva){
-    doc.setTextColor(163,100,10);
-    doc.text('IVA 13%:',14,fy+25);doc.text('+$'+iva.toFixed(2),55,fy+25);
-    doc.setTextColor(...ng);doc.setFont('helvetica','bold');
-    doc.text('Total: $'+totalIva.toFixed(2),14,fy+34);
-    if(notaPago){doc.setTextColor(180,20,20);doc.setFontSize(7);const ln=doc.splitTextToSize(notaPago,W/2-26);doc.text(ln,14,fy+44);}
-  } else {
-    doc.setFont('helvetica','bold');doc.text('Total: $'+subTotal.toFixed(2),14,fy+26);
-    if(notaPago){doc.setTextColor(180,20,20);doc.setFontSize(7);const ln=doc.splitTextToSize(notaPago,W/2-26);doc.text(ln,14,fy+36);}
-  }
+  let yRow=fy+18;
+  rowsR.forEach(r=>{
+    doc.setTextColor(...r.color);doc.setFontSize(8);doc.setFont('helvetica','normal');
+    doc.text(r.label,14,yRow);doc.text(r.val,70,yRow);yRow+=10;
+  });
+  // Total final destacado
+  doc.setFillColor(...az);doc.rect(12,yRow-2,W/2-26,11,'F');
+  doc.setTextColor(...bl);doc.setFontSize(9);doc.setFont('helvetica','bold');
+  doc.text('TOTAL FINAL:',14,yRow+6);doc.text('$'+fmt2(totalFinal),70,yRow+6);
+  yRow+=14;
+  if(notaPago){doc.setTextColor(180,20,20);doc.setFontSize(7);doc.setFont('helvetica','bold');const ln=doc.splitTextToSize(notaPago,W/2-26);doc.text(ln,14,yRow);}
 
-  // Col2
+  // Col2: Precio + Anticipo
   const c2=W/2-6;
   doc.setTextColor(...az);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('ANTICIPO ('+pct+'%)',c2,fy+8);
   doc.setTextColor(...ng);doc.setFontSize(8);doc.setFont('helvetica','normal');
-  doc.text('Precio al cliente:',c2,fy+17);doc.setFont('helvetica','bold');doc.setFontSize(11);
-  doc.text('$'+precioCliente.toFixed(2),c2,fy+27);
-  doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text('Anticipo: $'+anticipo.toFixed(2),c2,fy+37);
-  doc.text('Forma de pago: '+formaPago,c2,fy+cajaH-5);
+  doc.text('Precio al cliente:',c2,fy+18);doc.setFont('helvetica','bold');doc.setFontSize(11);
+  doc.text('$'+fmt2(precioCliente),c2,fy+28);
+  doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text('Anticipo: $'+fmt2(anticipo),c2,fy+38);
+  doc.text('Forma de pago: '+formaPago,c2,fy+cajaH-6);
 
-  // Col3
+  // Col3: Saldo
   const c3=W/2+34;
   doc.setTextColor(...az);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('SALDO',c3,fy+8);
-  doc.setTextColor(163,45,45);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text('Monto a cancelar:',c3,fy+17);
-  doc.setFont('helvetica','bold');doc.setFontSize(13);doc.text('$'+saldo.toFixed(2),c3,fy+28);
+  doc.setTextColor(163,45,45);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text('Monto a cancelar:',c3,fy+18);
+  doc.setFont('helvetica','bold');doc.setFontSize(13);doc.text('$'+fmt2(saldo),c3,fy+30);
 
   fy+=cajaH+8;
 
   // DATOS IMPORTANTES
   if(fy+10>doc.internal.pageSize.getHeight()-20){doc.addPage();fy=15;}
   doc.setFillColor(...az);doc.rect(10,fy,W-20,9,'F');
-  doc.setTextColor(...bl);doc.setFontSize(8);doc.setFont('helvetica','bold');
-  doc.text('DATOS IMPORTANTES',W/2,fy+6,{align:'center'});
-  fy+=11;
-
+  doc.setTextColor(...bl);doc.setFontSize(8);doc.setFont('helvetica','bold');doc.text('DATOS IMPORTANTES',W/2,fy+6,{align:'center'});fy+=11;
   CLAUSULAS.forEach((cl,i)=>{
     const txt=(i+1)+'.  '+(cl.rest?cl.t+cl.rest:cl.t);
-    const lineas=doc.splitTextToSize(txt,W-26);
-    const altoCelda=lineas.length*5+6;
+    const lineas=doc.splitTextToSize(txt,W-26);const altoCelda=lineas.length*5+6;
     if(fy+altoCelda>doc.internal.pageSize.getHeight()-15){doc.addPage();fy=15;}
     doc.setFillColor(i%2===0?255:245,i%2===0?255:247,i%2===0?255:250);
-    doc.rect(10,fy,W-20,altoCelda,'F');
-    doc.setDrawColor(...gm);doc.rect(10,fy,W-20,altoCelda,'S');
-    doc.setTextColor(...ng);doc.setFontSize(8);
-    doc.setFont('helvetica',cl.bold?'bold':'normal');
-    doc.text(lineas,14,fy+5);
-    fy+=altoCelda;
+    doc.rect(10,fy,W-20,altoCelda,'F');doc.setDrawColor(...gm);doc.rect(10,fy,W-20,altoCelda,'S');
+    doc.setTextColor(...ng);doc.setFontSize(8);doc.setFont('helvetica',cl.bold?'bold':'normal');
+    doc.text(lineas,14,fy+5);fy+=altoCelda;
   });
-
   ftrPDF(doc);
   doc.save('Cotizacion_'+numDoc+'_'+(document.getElementById('cliente').value||'cliente').replace(/\s/g,'_')+'.pdf');
 }
@@ -666,8 +639,7 @@ function generarOrdenTrabajo(){
   const doc=new jsPDF({unit:'mm',format:'a4'});
   const W=doc.internal.pageSize.getWidth(),numDoc='OT-'+Date.now().toString().slice(-6);
   const az=[26,58,92],bl=[255,255,255],gr=[245,247,250],gm=[180,190,200],ng=[30,30,30];
-  const precioCliente=parseFloat(document.getElementById('precio-sug').value)||0;
-  const anticipo=parseFloat(document.getElementById('anticipo').value)||0;
+  const {precioCliente,anticipo,totalFinal}=CALC;
   const pct=precioCliente>0?((anticipo/precioCliente)*100).toFixed(0):0;
   const modulo=document.getElementById('modulo').value;
 
@@ -676,41 +648,30 @@ function generarOrdenTrabajo(){
   doc.setTextColor(...az);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('DETALLE DE PRODUCTOS',14,y);y+=3;
 
   const filas=items.map(it=>{
-    let ex=[];
-    if(it.vidrio)ex.push('Vidrio: '+it.vidrio);
-    if(it.chapa)ex.push('Chapa: '+it.chapa);
-    if(it.desc)ex.push(it.desc);
-    const medidasTxt=it.tipo==='m2'?it.medidas+'\n(área: '+it.area.toFixed(3)+' m²)':it.medidas;
-    return[it.cantidad.toString(),it.nombre+(ex.length?'\n'+ex.join(' | '):''),medidasTxt];
+    let ex=[];if(it.vidrio)ex.push('Vidrio: '+it.vidrio);if(it.chapa)ex.push('Chapa: '+it.chapa);if(it.desc)ex.push(it.desc);
+    const med=it.tipo==='m2'?it.medidas+'\n(área: '+it.area.toFixed(3)+' m²)':it.medidas;
+    return[it.cantidad.toString(),it.nombre+(ex.length?'\n'+ex.join(' | '):''),med];
   });
-
   let bodyRows=filas;
-  if(modulo){
-    bodyRows=[
-      [{content:modulo,colSpan:3,styles:{halign:'center',fontStyle:'bold',fillColor:az,textColor:bl}}],
-      ...filas
-    ];
-  }
+  if(modulo)bodyRows=[{content:modulo,colSpan:3,styles:{halign:'center',fontStyle:'bold',fillColor:az,textColor:bl}},...filas];
 
   doc.autoTable({startY:y,head:[['Cant.','Descripción del producto','Medidas']],body:bodyRows,styles:{fontSize:8,cellPadding:4,textColor:ng},headStyles:{fillColor:az,textColor:bl,fontStyle:'bold',fontSize:7},alternateRowStyles:{fillColor:gr},columnStyles:{0:{halign:'center',cellWidth:16},1:{cellWidth:103},2:{halign:'left',cellWidth:57}},margin:{left:10,right:10},tableWidth:W-20});
 
   let fy=doc.lastAutoTable.finalY+6;
-  doc.setFillColor(...gr);doc.rect(10,fy,W-20,16,'F');
-  doc.setDrawColor(...gm);doc.rect(10,fy,W-20,16,'S');
+  doc.setFillColor(...gr);doc.rect(10,fy,W-20,16,'F');doc.setDrawColor(...gm);doc.rect(10,fy,W-20,16,'S');
   doc.setTextColor(...az);doc.setFontSize(8);doc.setFont('helvetica','bold');doc.text('Anticipo recibido: '+pct+'%',14,fy+6);
   doc.setTextColor(...ng);doc.setFontSize(8);doc.setFont('helvetica','normal');doc.text('Forma de pago: '+document.getElementById('forma-pago').value,14,fy+13);
   fy+=22;
-
   if(imgProductoB64||imgCuadernoB64){
     doc.setTextColor(...az);doc.setFontSize(7);doc.setFont('helvetica','bold');doc.text('IMÁGENES DE REFERENCIA',14,fy);fy+=4;
     const iw=85,ih=60;
     if(imgProductoB64){try{doc.addImage(imgProductoB64,'JPEG',10,fy,iw,ih);doc.setFontSize(7);doc.setFont('helvetica','normal');doc.setTextColor(...ng);doc.text('Foto del producto',10+iw/2,fy+ih+5,{align:'center'});}catch(e){}}
     if(imgCuadernoB64){try{const xc=imgProductoB64?10+iw+5:10;doc.addImage(imgCuadernoB64,'JPEG',xc,fy,iw,ih);doc.setFontSize(7);doc.setFont('helvetica','normal');doc.setTextColor(...ng);doc.text('Cuaderno de medidas',xc+iw/2,fy+ih+5,{align:'center'});}catch(e){}}
   }
-
   ftrPDF(doc);
   doc.save('OrdenTrabajo_'+numDoc+'_'+(document.getElementById('cliente').value||'cliente').replace(/\s/g,'_')+'.pdf');
 }
 
 cargarProductos();
 </script>
+
